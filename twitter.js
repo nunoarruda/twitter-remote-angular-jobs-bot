@@ -26,11 +26,9 @@ var stream = client.stream('statuses/filter', {track: query_part3});
 console.log('Waiting for tweets...');
 
 stream.on('data', function(data) {
-    var tweet = data.text;
-
-    if (match(tweet)) {
-        console.log('Tweet: ' + tweet);
-        save_to_db(tweet);
+    if (match(data.text)) {
+        console.log('Tweet: ' + data.text);
+        save_to_db(data);
     }
 });
  
@@ -47,7 +45,15 @@ var match = function(tweet) {
 };
 
 var save_to_db = function(data) {
-    ref.push(data, function(error) {
+    var obj = {
+        created_at: data.created_at,
+        id_str: data.id_str,
+        text: data.text,
+        name: data.user.name,
+        screen_name: data.user.screen_name
+    };
+
+    ref.push(obj, function(error) {
         if (error) {
             console.log('Data could not be saved.' + error);
         } else {
