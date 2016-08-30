@@ -36,12 +36,8 @@ stream.on('error', function(error) {
     throw error;
 });
 
-var match = function(tweet) {
-    if (query_part1.test(tweet) && query_part2.test(tweet)) {
-        return true;
-    } else {
-        return false;
-    }
+function match(tweet) {
+    return query_part1.test(tweet) && query_part2.test(tweet) && !/^RT @/i.test(tweet);
 };
 
 var save_to_db = function(data) {
