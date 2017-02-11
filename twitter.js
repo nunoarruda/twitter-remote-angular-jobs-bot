@@ -17,9 +17,9 @@ firebase.initializeApp({
 var db = firebase.database();
 var ref = db.ref('/');
 
-var query_part1 = /\b(css|ui|html|html5|bootstrap|ux|front-end|front end|javascript|js|interactive|interface|interaction|css3|sass|web application|experience|web app|frontend|mobile web|web content|fed|web applications|html 5|css 3|jquery|typescript|angular|angularjs|ionic|phonegap|cordova|hybrid|theme|client-side|client side)\b/i;
-var query_part2 = /\b(engineer|developer|expert|specialist|experts|guru|architects|dev|engineers|developers|ninja|architect|specialists|wizard|samurai|programmer|wizards|ninjas|programmers|coder|gurus|devs|coders|samurais|hacker|hackers|rockstar|rockstars|consultant|consultants|development)\b/i;
-var query_part3 = 'home,virtual,worldwide,remote,distributed,anywhere,remotely,telecommuting,telecommute,telework,wfh,teleworking,telecommuters,telecommuter,teleworker,teleworkers';
+var query_part1 = /\b(experience|theme|javascript|js|html|html5|css|ui|interactive|jquery|hybrid|bootstrap|interaction|interface|fed|ux|front-end|angularjs|ionic|angular|cordova|front end|css3|sass|web application|web app|frontend|phonegap|web applications|typescript|mobile web|web content|web ui|client-side|client side|html 5|css 3)\b/i;
+var query_part2 = /\b(development|engineering|developers|artist|developer|artists|ninja|expert|architects|engineer|specialist|guru|experts|architect|engineers|consultants|consultant|wizard|samurai|dev|specialists|hacker|artisan|producer|programmer|rockstar|hackers|wizards|artisans|ninjas|coder|programmers|gurus|devs|coders|rockstars|samurais)\b/i;
+var query_part3 = 'home,virtual,worldwide,remote,distributed,anywhere,remotely,telecommuting,telecommute,telework,wfh,teleworking,telecommuters,telecommuter,teleworkers,teleworker';
  
 var stream = client.stream('statuses/filter', {track: query_part3});
 
