@@ -17,7 +17,7 @@ firebase.initializeApp({
 var db = firebase.database();
 var ref = db.ref('/');
 
-var query_part1 = /\b(experience|theme|javascript|js|html|html5|css|ui|interactive|jquery|hybrid|bootstrap|interaction|interface|fed|ux|front-end|angularjs|ionic|angular|cordova|front end|css3|sass|web application|web app|frontend|phonegap|web applications|typescript|mobile web|web content|web ui|client-side|client side|html 5|css 3)\b/i;
+var query_part1 = /\b(theme|html|html5|javascript|ui|css|js|hybrid|jquery|interface|interaction|interactive|bootstrap|ux|front-end|angularjs|angular|ionic|cordova|front end|css3|sass|user experience|web application|web app|frontend|phonegap|web applications|typescript|web content|fed|mobile web|web ui|client-side|client side|html 5|css 3)\b/i;
 var query_part2 = /\b(development|engineering|developers|artist|developer|artists|ninja|expert|architects|engineer|specialist|guru|experts|architect|engineers|consultants|consultant|wizard|samurai|dev|specialists|hacker|artisan|producer|programmer|rockstar|hackers|wizards|artisans|ninjas|coder|programmers|gurus|devs|coders|rockstars|samurais)\b/i;
 var query_part3 = 'home,virtual,worldwide,remote,distributed,anywhere,remotely,telecommuting,telecommute,telework,wfh,teleworking,telecommuters,telecommuter,teleworkers,teleworker';
  
