@@ -17,9 +17,9 @@ firebase.initializeApp({
 var db = firebase.database();
 var ref = db.ref('/');
 
-var query_part1 = /\b(theme|html|html5|javascript|ui|css|js|hybrid|jquery|interface|interaction|interactive|bootstrap|ux|front-end|angularjs|angular|ionic|cordova|front end|css3|sass|user experience|web application|web app|frontend|phonegap|web applications|typescript|web content|fed|mobile web|web ui|client-side|client side|html 5|css 3)\b/i;
-var query_part2 = /\b(development|engineering|developers|artist|developer|artists|ninja|expert|architects|engineer|specialist|guru|experts|architect|engineers|consultants|consultant|wizard|samurai|dev|specialists|hacker|artisan|producer|programmer|rockstar|hackers|wizards|artisans|ninjas|coder|programmers|gurus|devs|coders|rockstars|samurais)\b/i;
-var query_part3 = 'home,virtual,worldwide,remote,distributed,anywhere,remotely,telecommuting,telecommute,telework,wfh,teleworking,telecommuters,telecommuter,teleworkers,teleworker';
+var query_part1 = /\b(theme|html|javascript|css|ui|hybrid|js|html5|jquery|interactive|interface|fed|react|interaction|bootstrap|angular|ux|angularjs|ionic|cordova|front end|redux|front-end|css3|sass|web application|user experience|frontend|web app|typescript|web applications|phonegap|reactjs|web content|mobile web|angular.js|web ui|client-side|client side|html 5|react.js|css)\b/i;
+var query_part2 = /\b(development|engineering|developers|artist|developer|artists|expert|ninja|engineer|experts|hacker|guru|architects|engineers|specialist|consultants|consultant|dev|architect|samurai|wizard|specialists|artisan|producer|programmer|rockstar|hackers|wizards|artisans|ninjas|coder|programmers|gurus|devs|coders|rockstars|samurais)\b/i;
+var query_part3 = 'home,virtual,remote,worldwide,distributed,anywhere,remotely,telecommuting,telecommute,telework,wfh,teleworking,telecommuters,telecommuter,teleworkers,teleworker';
  
 var stream = client.stream('statuses/filter', {track: query_part3});
 
