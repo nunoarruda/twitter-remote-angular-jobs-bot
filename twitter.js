@@ -40,7 +40,7 @@ function match(tweet) {
 
 var save_to_db = function(data) {
     var obj = {
-        created_at: data.created_at,
+        created_at: new Date(data.created_at),
         id_str: data.id_str,
         text: data.text,
         name: data.user.name,
