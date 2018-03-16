@@ -15,11 +15,11 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-var query_part1 = /\b(theme|html|javascript|css|ui|hybrid|js|html5|jquery|interactive|interface|fed|react|interaction|bootstrap|angular|ux|angularjs|ionic|cordova|front end|redux|front-end|css3|sass|web application|user experience|frontend|web app|typescript|web applications|phonegap|reactjs|web content|mobile web|angular.js|web ui|client-side|client side|html 5|react.js|css)\b/i;
+var query_part1 = 'angular,angularjs,angular.js';
 var query_part2 = /\b(development|engineering|developers|artist|developer|artists|expert|ninja|engineer|experts|hacker|guru|architects|engineers|specialist|consultants|consultant|dev|architect|samurai|wizard|specialists|artisan|producer|programmer|rockstar|hackers|wizards|artisans|ninjas|coder|programmers|gurus|devs|coders|rockstars|samurais)\b/i;
-var query_part3 = 'home,virtual,remote,worldwide,distributed,anywhere,remotely,telecommuting,telecommute,telework,wfh,teleworking,telecommuters,telecommuter,teleworkers,teleworker';
+var query_part3 = /\b(home|virtual|remote|worldwide|distributed|anywhere|remotely|telecommuting|telecommute|telework|wfh|teleworking|telecommuters|telecommuter|teleworkers|teleworker)\b/i;
  
-var stream = client.stream('statuses/filter', {track: query_part3});
+var stream = client.stream('statuses/filter', {track: query_part1});
 
 console.log('Waiting for tweets...');
 
@@ -35,7 +35,7 @@ stream.on('error', function(error) {
 });
 
 function match(tweet) {
-    return query_part1.test(tweet) && query_part2.test(tweet) && !/^RT @/i.test(tweet);
+    return query_part2.test(tweet) && query_part3.test(tweet) && !/^RT @/i.test(tweet);
 };
 
 var save_to_db = function(data) {
