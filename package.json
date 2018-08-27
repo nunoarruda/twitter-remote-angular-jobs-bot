@@ -10,10 +10,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "firebase-admin": "^5.11.0",
+    "firebase-admin": "^6.0.0",
     "twitter": "^1.7.1"
   },
   "devDependencies": {
-    "heroku-cli": "^6.15.32"
+    "heroku": "^7.12.2"
   }
 }
