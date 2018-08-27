@@ -2,10 +2,13 @@
   "name": "twitter-jobs-data",
   "version": "1.0.0",
   "description": "",
-  "main": "twitter.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node twitter.js"
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run lint && npm run build && npm start",
+    "start": "node lib/index.js",
+    "postinstall": "npm run build"
   },
   "author": "",
   "license": "MIT",
@@ -14,6 +17,8 @@
     "twitter": "^1.7.1"
   },
   "devDependencies": {
-    "heroku": "^7.12.2"
+    "heroku": "^7.12.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1"
   }
 }
