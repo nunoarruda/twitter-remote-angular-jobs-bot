@@ -17,8 +17,8 @@
     "twitter": "^1.7.1"
   },
   "devDependencies": {
-    "heroku": "^7.12.2",
+    "heroku": "^7.14.2",
     "tslint": "^5.11.0",
-    "typescript": "^3.0.1"
+    "typescript": "^3.0.3"
   }
 }
