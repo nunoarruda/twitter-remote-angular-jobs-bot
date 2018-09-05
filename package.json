@@ -1,5 +1,5 @@
 {
-  "name": "twitter-jobs-data",
+  "name": "twitter-remote-angular-jobs-bot",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
@@ -7,10 +7,11 @@
     "lint": "tslint --project tsconfig.json",
     "build": "tsc",
     "serve": "npm run lint && npm run build && npm start",
-    "start": "node lib/index.js",
-    "postinstall": "npm run build"
+    "start": "heroku local",
+    "postinstall": "npm run build",
+    "deploy": "git push heroku master"
   },
-  "author": "",
+  "author": "Nuno Arruda <nuno@nunoarruda.com> (https://nunoarruda.com/)",
   "license": "MIT",
   "dependencies": {
     "firebase-admin": "^6.0.0",
