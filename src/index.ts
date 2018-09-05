@@ -1,16 +1,20 @@
 import * as Twitter from "twitter";
 import * as admin from "firebase-admin";
-import * as serviceAccount from "./twitter-jobs-firebase-adminsdk-es2pt-19d4de42f6.json";
 
 const client = new Twitter({
-  consumer_key: "EfeqfcYZ0hH5YsWPar8LCYJ1f",
-  consumer_secret: "O5IhScH1XRd3ecqaSVcdM76ugsjkJl3UOrLCsin60tgnbIyVjm",
-  access_token_key: "258542343-Y4Mg64VKXgDBfkfHVfhPom3am0AGmMupi26v5dUa",
-  access_token_secret: "CkICReeLh3ocUnOnFWTJr3FAQZdSPMYkVsHceBGlFqGDn"
+  consumer_key: process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
+  credential: admin.credential.cert({
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+    privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n")
+  }),
+  databaseURL: process.env.FIREBASE_DATABASE_URL
 });
 
 const db = admin.firestore();
