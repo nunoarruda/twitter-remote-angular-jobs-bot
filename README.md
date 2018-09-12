@@ -1,6 +1,6 @@
 # Twitter Remote Angular Jobs Bot
 
-This is a bot that checks every single tweet in search for remote [Angular](https://angular.io/) jobs. If a tweet looks like a job advertisement then it will be saved into a database. This database will then be used in [twitter-remote-angular-jobs-rss](https://github.com/nunoarruda/twitter-remote-angular-jobs-rss).
+This is a bot that checks every single tweet in search for remote jobs in the Angular ecosystem ([Angular 2+](https://angular.io/), [Ionic](https://ionicframework.com/), [NativeScript](https://www.nativescript.org/)). If a tweet looks like a job advertisement then it will be saved into a database. This database will then be used in [twitter-remote-angular-jobs-rss](https://github.com/nunoarruda/twitter-remote-angular-jobs-rss).
 
 ## Juiciest bits
 
