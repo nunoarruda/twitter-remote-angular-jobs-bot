@@ -21,7 +21,7 @@ const db = admin.firestore();
 db.settings({ timestampsInSnapshots: true });
 const tweetsCol = db.collection("tweets");
 
-const queryPart1 = "angular,ionic,nativescript";
+const queryPart1 = "angular,ionic,ionicframework,nativescript";
 const queryPart2 = /\b(development|engineering|developers|artist|developer|artists|expert|ninja|engineer|experts|hacker|guru|architects|engineers|specialist|consultants|consultant|dev|architect|samurai|wizard|specialists|artisan|producer|programmer|rockstar|hackers|wizards|artisans|ninjas|coder|programmers|gurus|devs|coders|rockstars|samurais)\b/i;
 const queryPart3 = /\b(home|virtual|remote|worldwide|distributed|anywhere|remotely|telecommuting|telecommute|telework|wfh|teleworking|telecommuters|telecommuter|teleworkers|teleworker)\b/i;
 
