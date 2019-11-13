@@ -1,4 +1,5 @@
-import * as Twitter from "twitter";
+// @ts-ignore
+import * as Twitter from "twitter-lite";
 import * as admin from "firebase-admin";
 
 const client = new Twitter({
@@ -12,7 +13,7 @@ admin.initializeApp({
   credential: admin.credential.cert({
     projectId: process.env.FIREBASE_PROJECT_ID,
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-    privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n")
+    privateKey: process.env.FIREBASE_PRIVATE_KEY!.replace(/\\n/g, "\n")
   }),
   databaseURL: process.env.FIREBASE_DATABASE_URL
 });
@@ -28,24 +29,24 @@ const queryPart3 = /\b(home|virtual|remote|worldwide|distributed|anywhere|remote
 const stream = client.stream("statuses/filter", { track: queryPart1 });
 console.log("Tracking tweets...");
 
-stream.on("data", data => {
+stream.on("data", (data: any) => {
   if (match(data.text)) {
     console.log(`Tweet matched! -> ${data.text}`);
     saveToDb(data);
   }
 });
 
-stream.on("error", error => {
+stream.on("error", (error: any) => {
   throw error;
 });
 
-function match(tweet) {
+function match(tweet: any) {
   return (
     queryPart2.test(tweet) && queryPart3.test(tweet) && !/^RT @/i.test(tweet)
   );
 }
 
-function saveToDb(data) {
+function saveToDb(data: any) {
   console.log("Saving to database...");
   const obj = {
     created_at: new Date(data.created_at),
