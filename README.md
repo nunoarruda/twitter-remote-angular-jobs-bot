@@ -16,4 +16,4 @@ You can find the most interesting stuff at [`src/index.ts`](src/index.ts).
 
 ## Tech stack
 
-[Node.js](https://nodejs.org/en/), [TypeScript](https://www.typescriptlang.org/), [node-twitter](https://github.com/desmondmorris/node-twitter), [Firebase](https://firebase.google.com/), and [Heroku](https://www.heroku.com/).
+[Node.js](https://nodejs.org/en/), [TypeScript](https://www.typescriptlang.org/), [twitter-lite](https://github.com/draftbit/twitter-lite), [Firebase](https://firebase.google.com/), and [Heroku](https://www.heroku.com/).
