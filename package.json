@@ -14,12 +14,12 @@
   "author": "Nuno Arruda <nuno@nunoarruda.com> (https://nunoarruda.com/)",
   "license": "MIT",
   "dependencies": {
-    "firebase-admin": "^8.12.1",
-    "twitter-lite": "^0.13.0"
+    "firebase-admin": "^9.0.0",
+    "twitter-lite": "^0.14.0"
   },
   "devDependencies": {
-    "heroku": "^7.42.1",
+    "heroku": "^7.42.5",
     "tslint": "^6.1.2",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.7"
   }
 }
